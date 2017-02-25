@@ -8,7 +8,7 @@
  *
  * @author arelysalvarezpadilla
  */
-public class ComissionCalculator {
+public class CommisionCalculator {
     
     //instance variables 
     private String name;                    //sales person name
@@ -17,7 +17,7 @@ public class ComissionCalculator {
     private int rank;                       //rank of Apprentice, Junior, or Senior
     private double salesComis;
     
-    public ComissionCalculator(String name, int totalSales, int yearsServ, int rank){
+    public CommisionCalculator(String name, int totalSales, int yearsServ, int rank){
         this.name = name;
         this.totalSales = totalSales;
         this.yearsServ = yearsServ;
@@ -38,6 +38,8 @@ public class ComissionCalculator {
     {
         return this.yearsServ;
     }
+    
+    
     
     private void getRank()
     {
@@ -61,8 +63,10 @@ public class ComissionCalculator {
         {
             salesComis = 0.015;
         }
-        else if (totalSales > 400)
+        else if (totalSales > 400) {
             
+        }      
     }
+
     
 }
