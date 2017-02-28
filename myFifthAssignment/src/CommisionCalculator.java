@@ -18,6 +18,7 @@ public class CommisionCalculator {
     private String rankType;
     private double salesComis;
     
+    
     public CommisionCalculator(String name, int totalSales, int yearsServ, String rank){
         this.name = name;
         this.totalSales = totalSales;
@@ -25,22 +26,7 @@ public class CommisionCalculator {
         this.rank = rank;
     }
             
-    public String getName()
-    {
-        return this.name;
-    }
-    
-    public int getTotalSales()
-    {
-        return this.totalSales;
-    }
-    
-    public int getYearsServ()
-    {
-        return this.yearsServ;
-    }
-    
-    
+    //setting the rank 
     public void setRank(String input)
     {
         switch(input)
@@ -55,7 +41,7 @@ public class CommisionCalculator {
                 rankType = "Senior";
                 break;
             default:
-                rankType = "ERROR";
+                rankType = "ERROR, you have to select from 1 to 3";
                 break;
         }
     }
@@ -65,20 +51,46 @@ public class CommisionCalculator {
         return rankType;
     }
     
-    public void computeComission()
+    //making ll the calculations 
+    public void computeComission(double totalSales)
     {
-        if (totalSales > 100)
+        double comission = 0;
+        
+        if (totalSales > 400000)
+        {
+            salesComis = 0.02;
+            comission =  salesComis * 0.02;
+        }
+        else if (totalSales > 300000 )
+        {
+            salesComis = 0.0175;
+            comission =  salesComis * 0.0175;
+        }
+        else if (totalSales > 200000) {
+            salesComis = 0.015;
+            comission =  salesComis * 0.015;
+        }      
+        else if (totalSales >= 100000)
         {
             salesComis = 0.01;
+            comission =  salesComis * 0.01;
         }
-        else if (totalSales > 200)
+        else
         {
-            salesComis = 0.015;
+            salesComis = 0;
         }
-        else if (totalSales > 400) {
-            
-        }      
+        
+        System.out.println("The comission assigned is " + salesComis);
+        System.out.println("The commission is " + comission);
     }
+    
 
+    
+    
+    public double getComission()
+    {
+        return salesComis;
+        
+    }
     
 }

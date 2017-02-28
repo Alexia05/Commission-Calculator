@@ -53,9 +53,8 @@ public class CommisionCalculatorTest {
          System.out.println("The name of the sales person is " + name + " the total montly sales is " + totalSales
                         + " the amount of years served are " + yearsService + " and the rank is " + myCalculator.getRank());       
                 
+        myCalculator.computeComission(totalSales);
         
-        
-       
         
         
     }
