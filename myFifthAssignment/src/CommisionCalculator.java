@@ -24,10 +24,8 @@ public class CommisionCalculator {
         this.totalSales = totalSales;
         this.yearsServ = yearsServ;
         this.rank = rank;
-       // System.out.printf("The total monthly sales is: $%7.2f", totalSales) ;
-        
     }
-            
+    
     
      //setting the rank 
     public void setRank(String input)
@@ -56,28 +54,28 @@ public class CommisionCalculator {
         return rankType;
     }
     
-    //making ll the calculations 
+    //making all the calculations 
     public void computeComission(double totalSales)
     {
         double comiss = 0;
         if (totalSales > 400000)
         {
             salesComis = 0.02;
-            comiss =  salesComis * 0.02;
+            comiss =  salesComis * totalSales;
         }
         else if (totalSales > 300000 )
         {
             salesComis = 0.0175;
-            comiss =  salesComis * 0.0175;
+            comiss =  salesComis * totalSales;
         }
         else if (totalSales > 200000) {
             salesComis = 0.015;
-            comiss =  salesComis * 0.015;
+            comiss =  salesComis * totalSales;
         }      
         else if (totalSales >= 100000)
         {
             salesComis = 0.01;
-            comiss =  salesComis * 0.01;
+            comiss =  salesComis * totalSales;
         }
         else
         {
@@ -85,12 +83,12 @@ public class CommisionCalculator {
                     + "so you don't have any commission");
         }
         
-        System.out.println("\nThe commission assigned per sales is: " + salesComis);
-        System.out.println("\nThe commission is: " + comiss);
+        System.out.println("\nThe commission assigned per sales is: $" + salesComis);
+        System.out.println("\nThe commission is: $" + comiss);
         
         //commission regarding to years with the company
         double yearComiss;
-        if (yearsServ > 10)
+        if (yearsServ >= 10)
         {
             yearComiss = 0.01 * totalSales * yearsServ; 
         }
@@ -99,8 +97,7 @@ public class CommisionCalculator {
             yearComiss = 0.01 * 0.1 * totalSales * yearsServ; 
         }
         
-       
-        System.out.println("\nAccording to the years with the company you also have "
+        System.out.println("\nAccording to the years with the company you also have $"
                              + yearComiss + " additional commission");
         
         //according to the rank
@@ -112,20 +109,21 @@ public class CommisionCalculator {
                 break;
             case "2":
                 rankInc = 0.001 * totalSales;
-                System.out.println("\nYour incentive according to the rank is: "
+                System.out.println("\nYour incentive according to the rank is: $"
                             + rankInc);
                 break;
             case "3":
                 rankInc = 0.002 * totalSales;
-                System.out.println("\nYour incentive according to the rank is: "
+                System.out.println("\nYour incentive according to the rank is: $"
                             + rankInc);
                 break;
             default:
-                rankType = "\nERROR, you have to select from 1 to 3";
+                rankType = "\nERROR, you have to select rank from 1 to 3";
                 break;
         }
         
-        
+        System.out.println("\nYour total commission would be: $" + (comiss + yearComiss + rankInc));
+           
     }
     
 

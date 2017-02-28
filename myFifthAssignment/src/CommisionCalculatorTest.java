@@ -1,4 +1,5 @@
 
+import java.io.PrintStream;
 import javax.swing.JOptionPane;
 
 /*
@@ -49,10 +50,13 @@ public class CommisionCalculatorTest {
         
         
         
-         System.out.println("The name of the sales person is " + name + 
-              //   " \n\nThe total montly sales is: " + totalSales + " sales"
-                   "\n\nThe amount of years with the company are: " + yearsService + " years"
-                  + "\n\nThe rank is: " + myCalculator.getRank());       
+        System.out.println("The name of the sales person is " + name);
+                 
+        System.out.printf("\nThe total montly sales is: $%,d.00", totalSales);
+                
+                                     
+        System.out.println("\n\nThe amount of years with the company are: " + yearsService + " years"
+                 + "\n\nThe rank is: " + myCalculator.getRank());       
          
          
           
