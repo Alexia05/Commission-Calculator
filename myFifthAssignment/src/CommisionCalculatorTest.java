@@ -39,21 +39,27 @@ public class CommisionCalculatorTest {
         rank = JOptionPane.showInputDialog("Insert the rank");
         
         
-        
-        
+       
         //creating the calculator
         CommisionCalculator myCalculator = new CommisionCalculator(input, totalSales, yearsService, rank);
-        
-        
-        myCalculator.setRank(rank);
-        
        
        
+        //calling the rank 
+         myCalculator.setRank(rank);  
         
-         System.out.println("The name of the sales person is " + name + " the total montly sales is " + totalSales
-                        + " the amount of years served are " + yearsService + " and the rank is " + myCalculator.getRank());       
-                
-        myCalculator.computeComission(totalSales);
+        
+        
+         System.out.println("The name of the sales person is " + name + 
+              //   " \n\nThe total montly sales is: " + totalSales + " sales"
+                   "\n\nThe amount of years with the company are: " + yearsService + " years"
+                  + "\n\nThe rank is: " + myCalculator.getRank());       
+         
+         
+          
+        
+        
+        //computing all the commissions
+         myCalculator.computeComission(totalSales);
         
         
         
