@@ -14,10 +14,11 @@ public class CommisionCalculator {
     private String name;                    //sales person name
     private int totalSales;                 //total monthly sales
     private int yearsServ;                  //years of service with the company
-    private int rank;                       //rank of Apprentice, Junior, or Senior
+    private String rank;                       //rank of Apprentice, Junior, or Senior
+    private String rankType;
     private double salesComis;
     
-    public CommisionCalculator(String name, int totalSales, int yearsServ, int rank){
+    public CommisionCalculator(String name, int totalSales, int yearsServ, String rank){
         this.name = name;
         this.totalSales = totalSales;
         this.yearsServ = yearsServ;
@@ -40,17 +41,28 @@ public class CommisionCalculator {
     }
     
     
-    
-    private void getRank()
+    public void setRank(String input)
     {
-    if (rank == 1) 
-    {
-        System.out.println("Apprentice");
-    } else if (rank == 2){
-        System.out.println("Junior");
+        switch(input)
+        {
+            case "1": 
+                rankType = "Apprentice";
+                break;
+            case "2":
+                rankType = "Junior";
+                break;
+            case "3":
+                rankType = "Senior";
+                break;
+            default:
+                rankType = "ERROR";
+                break;
+        }
     }
-    else 
-        System.out.println("Senior");
+    
+    public String getRank()
+    {
+        return rankType;
     }
     
     public void computeComission()

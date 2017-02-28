@@ -21,13 +21,12 @@ public class CommisionCalculatorTest {
         
         int totalSales;
         int yearsService;
-        int rank;
+        String name;
+        String rank;
         String input;
         
         //getting all the data from the user 
-        input = JOptionPane.showInputDialog("Insert the sales associate name");
-
-        String name = input;
+        name = JOptionPane.showInputDialog("Insert the sales associate name");
         
         input = JOptionPane.showInputDialog("Insert the amount of sales in a month");
         
@@ -37,16 +36,22 @@ public class CommisionCalculatorTest {
         
         yearsService = Integer.parseInt(input);
         
-        input = JOptionPane.showInputDialog("Insert the rank");
+        rank = JOptionPane.showInputDialog("Insert the rank");
         
-        rank = Integer.parseInt(input);
+        
         
         
         //creating the calculator
-        CommisionCalculator myCalculator = new CommisionCalculator(input, totalSales, yearsService, rank );
+        CommisionCalculator myCalculator = new CommisionCalculator(input, totalSales, yearsService, rank);
+        
+        
+        myCalculator.setRank(rank);
+        
        
+       
+        
          System.out.println("The name of the sales person is " + name + " the total montly sales is " + totalSales
-                        + " the amount of years served are " + yearsService + " and the rank is " + rank);       
+                        + " the amount of years served are " + yearsService + " and the rank is " + myCalculator.getRank());       
                 
         
         
